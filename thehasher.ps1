@@ -88,8 +88,10 @@ $fileOpenButton.Add_Click($openFileBrowser)
 $checkHashButton = {
 		$global:filehash 	= Get-FileHash $global:filename -Algorithm $global:algo #SHA1
 									if($textBox.Text -eq $global:filehash.hash) {	
+										$outputLabel.ForeColor = [System.Drawing.Color]::Green
 										$outputLabel.Text = "File Mathches Hash"
 									} else { 
+										$outputLabel.ForeColor = [System.Drawing.Color]::Red
 										$outputLabel.Text = "File Doesn't Match Hash" 
 									} 
 		
